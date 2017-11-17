@@ -107,6 +107,8 @@ int main(int argc, char *argv[])
                     if (year>1582||(year==1582&&month>=10&&day>=15))
                     {
                         result=(day+m_code+y_code)%7; /*Main formula*/
+                        if (month==1||month==2)
+                            result-=1;
                         switch (result) /*Result to string translation*/
                         {
                             case 0:{ printf("\t it's Saturday\n"); break; }
